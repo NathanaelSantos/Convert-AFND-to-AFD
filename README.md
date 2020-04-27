@@ -3,5 +3,5 @@
 ![](image/imageAFND.png)
 
 
-Programa para conversão de AFN em AFD.
-Esta Aplicação foi escrita em Java, pode carregar arquivos do tipo XML criado no JFlap que contenha um AFN, o mesmo converte um automato não determinístico em determinístico e após conversão pode gerar um arquivo XML de saída contendo um AFD no JFlap.
+AFN to AFD conversion program. This application was written using the Java language, where the tool can load an XML type file created in the tool: JFlap, containing an AFND(Non-Deterministic Finite Automaton). This way, the tool will convert AFND (Finite Non Deterministic Automaton) to an AFD (Finite Deterministic Automaton), and after the conversion, an output XML file containing the converted automaton is generated.
+
