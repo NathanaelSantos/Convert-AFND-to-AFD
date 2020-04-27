@@ -1,4 +1,4 @@
-# Conversor_AFN-para-AFD
+# Convert AFND to AFD
 
 ![](image/imageAFND.png)
 
