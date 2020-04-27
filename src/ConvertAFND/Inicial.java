@@ -1,5 +1,6 @@
 package ConvertAFND;
 
+import java.awt.Color;
 import java.io.*;
 import java.util.*;
 import java.util.List;
@@ -52,9 +53,12 @@ public class Inicial extends javax.swing.JFrame {
         jLabelCriaXml = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Convert AFND em AFD ");
+        setTitle("Convert AFND to AFD");
 
-        jButtonAbrir.setText("Abrir");
+        jButtonAbrir.setText("Open");
+        jButtonAbrir.setBackground( new Color(252,48,82));
+        jButtonAbrir.setBorderPainted(false);
+        
         jButtonAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1GetFile(evt);
@@ -69,8 +73,11 @@ public class Inicial extends javax.swing.JFrame {
 
         jTextFieldEstadosFinais.setEditable(false);
 
-        buttonConverter.setText("Converter ");
+        buttonConverter.setText("Convert ");
+        buttonConverter.setBackground(new Color(252,48,82));
+        buttonConverter.setBorderPainted(false);
         buttonConverter.setEnabled(false);
+        
         buttonConverter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonConverterActionPerformed(evt);
@@ -101,6 +108,7 @@ public class Inicial extends javax.swing.JFrame {
                 false, false, false, false
             };
 
+            @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
@@ -127,20 +135,21 @@ public class Inicial extends javax.swing.JFrame {
                 }
         ));
 
-        jButtonGerarAFD.setText("Gerar AFD ");
+        jButtonGerarAFD.setText("Generate AFD");
+        jButtonGerarAFD.setBackground(new Color(252,48,82));
         jButtonGerarAFD.setEnabled(false);
+        
         jButtonGerarAFD.addActionListener((java.awt.event.ActionEvent evt) -> {
             jButton2ActionPerformed(evt);
         });
 
-        jLabelCarregaArquivoXml.setText("1º Carrega arquivo xml contendo um AFN.");
-
-        jLabelConverteAFN.setText("2º Converte um AFN em AFD. ");
-
-        jLabelCriaXml.setText("3º Cria um Xml contendo um AFD.");
+        jLabelCarregaArquivoXml.setText("1º Upload xml file containing an AFN.");
+        jLabelConverteAFN.setText("2º Converts an AFN into AFD.");
+        jLabelCriaXml.setText("3º Create an Xml containing an AFD.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
+        
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -206,7 +215,7 @@ public class Inicial extends javax.swing.JFrame {
             
             JFileChooser fileChooser = new JFileChooser(); // Cria um seletor de arquivos
                 
-            fileChooser.setCurrentDirectory(new File(current + "\\Arquivo_In"));
+            fileChooser.setCurrentDirectory(new File(current + "\\File_In"));
             int result = fileChooser.showOpenDialog(this);
             
             if (result == JFileChooser.APPROVE_OPTION) {
@@ -286,7 +295,7 @@ public class Inicial extends javax.swing.JFrame {
         try {
             GerarXML gera = new GerarXML();
             gera.gerar(auto_afd, arqName, true);
-            JOptionPane.showMessageDialog(null, "Arquivo AFD_" + arqName + " foi gerado com sucesso!");
+            JOptionPane.showMessageDialog(null, "File AFD_" + arqName + " was successfully generated!");
         } catch (IOException ex) {
             Logger.getLogger(Inicial.class
                     .getName()).log(Level.SEVERE, null, ex);
