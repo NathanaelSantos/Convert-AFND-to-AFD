@@ -1,21 +1,13 @@
 package ConvertAFND;
 
-import ConvertAFND.GerarXML;
-import ConvertAFND.CarregarXml;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.*;
+import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import ConvertAFND.Automato;
-import ConvertAFND.Estados;
-import ConvertAFND.EstadoFinal;
-import ConvertAFND.EstadoInicial;
 
 public class Inicial extends javax.swing.JFrame {
 

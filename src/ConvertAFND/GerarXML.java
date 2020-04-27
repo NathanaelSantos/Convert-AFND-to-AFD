@@ -1,9 +1,5 @@
 package ConvertAFND;
 
-import ConvertAFND.EstadoFinal;
-import ConvertAFND.EstadoInicial;
-import ConvertAFND.Automato;
-import ConvertAFND.Estados;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
